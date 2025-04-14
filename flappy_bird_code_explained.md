@@ -30,7 +30,7 @@ Here are some screenshots of the game:
    ![Game Over](screenshots/gameover.png)
     ![Game Over](screenshots/uigameover.png)
 4. **Game instructions:**
-      ![Game instruction](screenshots/gameinstruction.png)
+      ![Game instruction](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameinstruction.png)
    ![Game instruction](screenshots/uiinstruction.png)
 
 
