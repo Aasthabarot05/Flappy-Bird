@@ -1,283 +1,201 @@
-# Flappy Bird Console Game in C++
+# 🎮 Flappy Bird Console Game in C++ 🐤
 
-This is a simple and fun console-based version of the classic **Flappy Bird** game, created using **C++**. The game is played in a text-based environment, where the player controls a bird that must navigate through columns of pipes without colliding with them. The bird can "jump" by pressing the spacebar and falls due to gravity when no input is provided. The goal is to keep the bird alive for as long as possible by passing through the gaps in the pipes while avoiding collisions with them.
+This is a simple and fun **console-based version** of the classic **Flappy Bird** game, created using **C++**. The game runs in a **text-based console environment**, where the player controls a bird 🐤 that must navigate through 🌵 **pipes** without colliding.
 
-This project is a great example of creating interactive games in a console window, using basic concepts like game loops, keyboard inputs, collision detection, and real-time rendering of text-based graphics.
+The game is easy to play, lightweight, and a great starting point to explore **basic game development** with C++. It uses simple concepts like **game loops**, **keyboard inputs**, **collision detection**, and **ASCII/emoji-based rendering** to simulate a visually fun and interactive game.
 
-This game runs in the console/terminal and is designed to be simple, easy to play, and a fun way to learn about basic game development in C++.
-## Game Screenshots
+---
 
-Here are some screenshots of the game:
+## 📸 Game Screenshots
 
-1. **Main Menu Screen:**
+1. **Main Menu Screen**  
    ![Main Menu](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gamestart.png)
-      ![Main Menu](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uistartscreen.png)
 
-
-2. **Gameplay:**
+2. **Gameplay Screen**  
    ![Gameplay](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameplayarea.png)
-      ![Gameplay](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameboard.png)
 
-3. **Game Over Screen:**
+3. **Game Over Screen**  
    ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameover.png)
-    ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameover.png)
-4. **Game instructions:**
-      ![Game instruction](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameinstruction.png)
-   ![Game instruction](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uiinstruction.png)
-   # Flappy Bird Game in C++
 
-## Project Overview
+4. **Instructions Screen**  
+   ![Instructions](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameinstruction.png)
 
-This is a console-based implementation of the famous **Flappy Bird** game written in C++. The game is designed to be played in the command prompt using ASCII-based graphics. The objective is to control a bird, make it fly through gaps in pipes, and avoid collisions with the pipes or the ground. The game continues until the bird hits a pipe or the ground.
+---
 
-## Table of Contents
+## 🧩 Table of Contents
 
-- [Features](#features)
-- [How It Works](#how-it-works)
-- [Data Structures](#data-structures-used)
-- [Game Flow](#game-flow)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+- [🚀 Project Overview](#project-overview)
+- [✨ Features](#features)
+- [⚙️ How It Works](#how-it-works)
+- [🧱 Data Structures Used](#data-structures-used)
+- [🔁 Game Flow](#game-flow)
+- [💡 Main Functions of the Game](#main-functions-of-the-game-)
+- [🆕 New Features and Enhancements](#new-features-and-changes-in-the-game-modified-by-me-)
+- [🛠️ Installation](#installation)
+- [🎯 Usage](#usage)
+- [📜 License](#license)
 
-## Features
+---
 
-- **Graphical Display:**  
-  The game uses ASCII characters to render the bird, pipes, and game borders on the console screen.
+## 🚀 Project Overview
 
-- **Bird Movement:**  
-  The bird moves based on the player's input. The player can make the bird "fly" by pressing the **Spacebar**, which makes the bird rise temporarily. The bird falls continuously due to gravity unless the spacebar is pressed.
+This is a **console-based version** of the famous 🐦 Flappy Bird game written in **C++** using **ASCII characters and emojis**. The objective is to guide the bird through gaps in pipes and avoid crashing into the walls or ground. The longer you survive, the higher your score! 📈
 
-- **Pipe Generation and Movement:**  
-  Pipes are generated at random vertical positions and move from right to left across the screen. A gap exists in the middle of the pipes through which the bird must pass.
+---
 
-- **Score System:**  
-  The player earns points every time the bird successfully passes through a gap in the pipes. The score is displayed in real-time.
+## ✨ Features
 
-- **Game Over and Restart:**  
-  If the bird collides with a pipe or the ground, the game ends, and a "Game Over" screen is displayed. The player can restart the game by pressing any key.
+- 🐤 **Bird Movement:** Control the bird with the **Spacebar** to fly, while gravity pulls it downward.
+- 🌵 **Random Pipe Generation:** Pipes are created at different vertical positions with a gap to fly through.
+- 📈 **Live Score Tracking:** Your score increases every time you pass a pipe. Displayed in real time!
+- 💥 **Collision Detection:** The game ends if the bird crashes into a pipe or the ground.
+- 📚 **Instructions Screen:** Explains controls and how to play the game.
+- 🕹️ **Interactive Menu:** Choose to start the game, read instructions, or exit.
+- 🎨 **Emoji Visuals:** Makes gameplay visually fun with emoji-based graphics.
+- 🧱 **Console Borders:** Drawn using emojis to better separate the play area.
+  
+---
 
-- **Instructions:**  
-  The game includes a screen that explains the basic controls, such as pressing the spacebar to make the bird fly.
+## ⚙️ How It Works
 
-- **Main Menu:**  
-  The game starts with a main menu that allows the user to start the game, view instructions, or quit.
+### 🛠️ 1. Console Setup
 
-## How It Works
+- The `gotoxy()` function is used to position elements using `SetConsoleCursorPosition()`.
+- The bird, pipes, and borders are drawn using ASCII/emoji characters.
 
-### 1. Setting Up the Console
+### 🔁 2. Game Loop (`play()`)
 
-The program sets up the console window for proper rendering of the game's graphical elements using ASCII characters. The `gotoxy()` function positions the cursor in the console window to draw the bird, pipes, and game borders at the right locations.
+Each loop iteration performs:
+- ⌨️ Handling key input (Spacebar to fly, Esc to quit)
+- 🦅 Drawing & erasing the bird
+- 🌵 Drawing & erasing pipes
+- ⚠️ Detecting collisions
+- 📈 Updating score
+- 💤 Adding a small delay for animation (`Sleep(100)`)
 
-### 2. Main Game Loop
+### 🎮 3. Game Over
 
-The core of the game lies in the main loop inside the `play()` function. This loop continues until the player quits or a collision occurs. Each iteration performs the following:
+- When a collision is detected, the `gameover()` function is triggered.
+- Shows a final score and prompts user to return to menu.
 
-- **User Input Handling:**  
-  The program checks if the player presses a key using `kbhit()` and `getch()`. If the spacebar is pressed, the bird rises; otherwise, gravity pulls the bird downward.
+### 🧱 4. Pipe Generation
 
-- **Drawing Game Elements:**  
-  The bird and pipes are drawn using ASCII characters. The bird’s position is updated every frame.
+- `genPipe()` randomly sets pipe gap positions.
+- Pipes are moved frame-by-frame, looping across the screen endlessly.
 
-- **Pipe Movement:**  
-  The pipes move from right to left across the screen. Once a pipe goes off-screen, it is reset to the right side, creating an endless stream of pipes.
+### ⚡ 5. Collision Detection
 
-- **Collision Detection:**  
-  The program checks if the bird collides with a pipe or falls below the screen. If a collision is detected, the game ends.
+- The `collision()` function checks whether the bird collides with pipes or hits the ground.
 
-- **Score Update:**  
-  The score is updated each time the bird successfully passes through a pipe. The score is displayed and updated in real-time.
+### 📚 6. Instructions
 
-- **Smooth Animation:**  
-  A delay (`Sleep(100)`) is introduced to ensure smooth animation and to allow the player to see the game elements update.
+- A detailed instruction screen is available from the main menu.
 
-### 3. Game Over and Restart
+---
 
-When a collision is detected (either the bird hits a pipe or the ground), the `gameover()` function is called, which displays a "Game Over" message. The player can press any key to return to the main menu and restart the game.
-
-### 4. Main Menu
-
-The game begins with a main menu that gives the player three options:
-- **Start the game**: Begin a new game.
-- **View instructions**: Display instructions on how to play.
-- **Quit**: Exit the game.
-
-The player interacts with the menu by pressing the corresponding number.
-
-### 5. Pipe Generation and Gap Creation
-
-Pipes are randomly generated with a vertical gap in the middle. The `genPipe()` function sets the gap position, ensuring that the bird can pass through without hitting the pipes. Pipes are redrawn every frame, and once a pipe moves off-screen, it is recycled and reappears on the right side.
-
-### 6. Collision Detection
-
-The `collision()` function checks if the bird's current position intersects with the pipes. If the bird is outside the gap or hits a pipe, the function returns `1`, signaling a collision.
-
-### 7. Bird Movement
-
-The bird's position (`birdPos`) is updated each frame. The spacebar makes the bird move upward, while gravity continuously pulls it downward. The bird's vertical movement is confined within the screen bounds to prevent it from moving off-screen.
-
-### 8. Score and Game State
-
-The score increments each time the bird successfully passes a pipe. The score is updated and displayed on the screen in real-time using the `updateScore()` function.
-
-## Data Structures Used
+## 🧱 Data Structures Used
 
 - **Arrays:**
-  - `pipePos[3]`: Holds the x-coordinates of the pipes.
-  - `gapPos[3]`: Holds the y-coordinate (vertical position) of the gaps in the pipes.
-  - `pipeFlag[3]`: Flags indicating whether a pipe is currently active (visible).
+  - `pipePos[3]`: X-positions of pipes
+  - `gapPos[3]`: Y-positions of gaps
+  - `pipeFlag[3]`: Tracks active pipes
 
 - **2D Array:**
-  - `char bird[2][6]`: This array defines the bird’s appearance using ASCII characters. Each element represents a part of the bird.
+  - `string bird[2][6]`: Represents the bird’s ASCII/emoji art
 
 - **Variables:**
-  - `birdPos`: Tracks the bird's current vertical position.
-  - `score`: Tracks the current score of the game.
-
-## Game Flow
-
-1. **Main Menu**: The user selects an option (Start Game, Instructions, Quit).
-2. **Start Game**: The game begins, and the bird moves based on the user input.
-3. **Game Loop**: The game continues until the bird collides with a pipe or the ground.
-4. **Game Over**: Once the game ends, the player is prompted to return to the main menu.
-
-## Main Functions of the Game 🚀
-
-The main functions of the game are the core components responsible for executing the game logic. Below is an overview of the key functions and their responsibilities:
-
-### 1. `main()` function 🏁
-**Role:** The entry point of the program. It controls the overall flow of the game.
-
-**Responsibilities:**
-- Initializes the game by setting the cursor visibility and seeding the random number generator.
-- Displays the main menu and waits for user input.
-- Based on the user input, either starts the game, shows instructions, or exits the program.
-- Calls the `play()` function to start the game when the user chooses to play.
+  - `int birdPos`: Vertical position of the bird
+  - `int score`: Player’s score
 
 ---
 
-### 2. `play()` function 🎮
-**Role:** This is the main game loop that controls the gameplay and updates the game state in real-time.
+## 🔁 Game Flow
 
-**Responsibilities:**
-- Initializes the bird’s position and score.
-- Generates and draws the pipes.
-- Continuously checks for user input (spacebar to make the bird fly and ESC to exit).
-- Moves the bird and pipes.
-- Checks for collisions between the bird and the pipes or the ground.
-- Updates the score each time the bird successfully passes through a gap.
-- Ends the game if a collision occurs and calls the `gameover()` function.
+1. Start at the **Main Menu**
+2. Press **1** to Play, **2** for Instructions, **3** to Quit
+3. Use **Spacebar** to flap and fly
+4. Avoid hitting pipes or floor/ceiling
+5. Game Over screen shows final score
+6. Return to main menu to play again
 
 ---
 
-### 3. `gotoxy(int x, int y)` function 🎯
-**Role:** Used to move the cursor to a specific position on the console screen.
+## 💡 Main Functions of the Game 🚀
 
-**Responsibilities:**
-- Sets the cursor's position using `SetConsoleCursorPosition()` to place text at the correct locations on the screen.
+### 1. `main()` 🏁
+- Starts the game
+- Displays main menu
+- Handles user input to start game/instructions/quit
 
----
+### 2. `play()` 🎮
+- Main game loop
+- Updates bird & pipe positions
+- Handles input, collisions, and scoring
 
-### 4. `drawBorder()` function 🖼️
-**Role:** Draws the borders of the game area, including the top, bottom, and side borders, as well as the separator between the game window and the menu area.
+### 3. `gotoxy(x, y)` 🎯
+- Moves console cursor to specified `(x, y)` for drawing
 
-**Responsibilities:**
-- Uses `gotoxy()` to place the ASCII characters that create the borders on the screen.
+### 4. `drawBorder()` 🧱
+- Draws the top, bottom, and side borders using emoji bricks
 
----
+### 5. `genPipe(ind)` 🌿
+- Sets random pipe gap at index `ind`
 
-### 5. `genPipe(int ind)` function 🏗️
-**Role:** Generates the vertical gap position of a pipe.
+### 6. `drawPipe(ind)` & `erasePipe(ind)` 🌵❌
+- Draws or clears pipe using gap positions
 
-**Responsibilities:**
-- Sets a random gap position for the pipe at index `ind` between the values 3 and 16.
+### 7. `drawBird()` & `eraseBird()` 🐤🕊️
+- Draws or erases the bird on screen at its position
 
----
+### 8. `collision()` ⚡
+- Checks if bird hits pipe or ground
 
-### 6. `drawPipe(int ind)` function 🚧
-**Role:** Draws a pipe at the specified index `ind`.
+### 9. `gameover()` 💥
+- Displays game over message & prompts restart
 
-**Responsibilities:**
-- Draws the upper and lower parts of the pipe by using the gap position (`gapPos[ind]`), filling in the space with ASCII characters.
+### 10. `updateScore()` 💯
+- Shows the current score on screen
 
----
-
-### 7. `erasePipe(int ind)` function ❌
-**Role:** Erases a pipe at the specified index `ind`.
-
-**Responsibilities:**
-- Clears the space previously occupied by the pipe by overwriting it with empty spaces.
-
----
-
-### 8. `drawBird()` function 🦅
-**Role:** Draws the bird on the screen at its current position.
-
-**Responsibilities:**
-- Uses ASCII characters from the `bird` array to render the bird in the console at the current vertical position (`birdPos`).
+### 11. `instructions()` 📖
+- Displays how-to-play screen with controls
 
 ---
 
-### 9. `eraseBird()` function 🕊️
-**Role:** Erases the bird from the screen.
+## 🆕 New Features and Changes in the Game Modified by Me 🚀
 
-**Responsibilities:**
-- Clears the area where the bird is currently positioned.
+### ✨ 1. **Emoji-based Visuals**
+- 🐤 for the bird  
+- 🌵 for pipes  
+- 🧱 for walls  
+- 📈 for score  
+
+### 🧱 2. **Game Area Borders**
+- Now clearly drawn using 🧱 to make the game feel structured
+
+### 📚 3. **Updated Instructions**
+- Clearer instructions with emojis to enhance readability  
+  ![Instructions](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uiinstruction.png)
+
+### 📈 4. **Live Scoreboard**
+- Updated design to include 📈 emoji and real-time tracking
+
+### ⚡ 5. **Improved Collision System**
+- More responsive detection of pipe and floor hits
+
+### 🕹️ 6. **Keyboard Controls**
+- ⬆️ SPACE = Jump  
+- ⎋ ESC = Quit  
+
+### 💥 7. **Game Over Screen**
+- Displays score and gives option to restart  
+  ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameover.png)
 
 ---
 
-### 10. `collision()` function ⚡
-**Role:** Detects whether the bird collides with a pipe or the ground.
+## 🛠️ Installation
 
-**Responsibilities:**
-- Checks if the bird's current position intersects with any active pipes or if it hits the ground, returning `1` if there is a collision and `0` otherwise.
-
----
-
-### 11. `gameover()` function 💥
-**Role:** Displays the "Game Over" screen.
-
-**Responsibilities:**
-- Clears the screen and prints a message indicating that the game is over. The player is prompted to press any key to return to the main menu.
-
----
-
-### 12. `updateScore()` function 💯
-**Role:** Updates and displays the score in the game.
-
-**Responsibilities:**
-- Prints the current score on the screen at a specific location (in the menu area of the screen).
-
----
-
-### 13. `instructions()` function 📚
-**Role:** Displays the game instructions.
-
-**Responsibilities:**
-- Clears the screen and displays instructions on how to play the game, such as using the spacebar to make the bird fly.
-
-
-## Installation
-
-1. Clone this repository or download the source code.
-2. Ensure you have a C++ compiler installed (e.g., [GCC](https://gcc.gnu.org/)).
-3. Compile the code using the following command (in the terminal/command prompt):
-    ```bash
-    g++ -o flappybird flappybird.cpp
-    ```
-4. Run the game:
-    ```bash
-    ./flappybird
-    ```
-
-## Usage
-
-- Press the **Spacebar** to make the bird fly.
-- The bird continuously falls unless you press the spacebar.
-- Avoid colliding with pipes or the ground to keep playing.
-- Press **Esc** to quit the game.
-
-
-
-
-
+1. 📥 Clone or download the repository
+2. 🧰 Make sure you have a C++ compiler installed (e.g., `g++`)
+3. 🔨 Compile the code:
+   ```bash
+   g++ -o flappybird flappybird.cpp
