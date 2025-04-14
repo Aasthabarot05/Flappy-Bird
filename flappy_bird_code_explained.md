@@ -18,20 +18,20 @@ This game runs in the console/terminal and is designed to be simple, easy to pla
 Here are some screenshots of the game:
 
 1. **Main Menu Screen:**
-   ![Main Menu](screenshots/gamestart.png)
-      ![Main Menu](screenshots/uistartscreen.png)
+   ![Main Menu](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gamestart.png)
+      ![Main Menu](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uistartscreen.png)
 
 
 2. **Gameplay:**
-   ![Gameplay](screenshots/gameplayarea.png)
-      ![Gameplay](screenshots/uigameboard.png)
+   ![Gameplay](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameplayarea.png)
+      ![Gameplay](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameboard.png)
 
 3. **Game Over Screen:**
-   ![Game Over](screenshots/gameover.png)
-    ![Game Over](screenshots/uigameover.png)
+   ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameover.png)
+    ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameover.png)
 4. **Game instructions:**
       ![Game instruction](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/gameinstruction.png)
-   ![Game instruction](screenshots/uiinstruction.png)
+   ![Game instruction](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uiinstruction.png)
 
 
 
