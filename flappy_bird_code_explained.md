@@ -93,26 +93,96 @@ Each loop iteration performs:
 
 ---
 
-## 🧱 Data Structures Used
+## 🧠 Other Data Structures & Key Concepts Used
 
-- **Arrays:**
-  - `pipePos[3]`: X-positions of pipes
-  - `gapPos[3]`: Y-positions of gaps
-  - `pipeFlag[3]`: Tracks active pipes
-
-- **2D Array:**
-  - `string bird[2][6]`: Represents the bird’s ASCII/emoji art
-
-- **Variables:**
-  - `int birdPos`: Vertical position of the bird
-  - `int score`: Player’s score
+This project incorporates a mix of fundamental **data structures** and **programming concepts** to deliver a smooth, interactive gaming experience in a console window. Below is a breakdown:
 
 ---
+
+### 📦 Arrays
+
+- **1D Arrays**
+  - `int pipePos[3];` → Stores the horizontal positions of up to 3 pipes
+  - `int gapPos[3];` → Stores the vertical gap position for each pipe
+  - `int pipeFlag[3];` → Keeps track of whether each pipe is active or not (boolean-like behavior using `int`)
+
+- **2D Array**
+  - `string bird[2][6];` → Used to visually render the bird with emojis and ASCII characters in a 2-row, 6-column layout
+
+✅ Arrays are central to managing **multiple pipe objects** and drawing the **bird sprite** dynamically.
+
+---
+
+### ⏱️ Game Loop & Real-Time Updates
+
+- The game uses a **real-time loop** inside the `play()` function.
+- Continuously checks for user input with `kbhit()` and updates the game state every few milliseconds using `Sleep(100);`
+- This ensures the **bird moves**, **pipes scroll**, and **collision detection** works smoothly.
+
+---
+
+### 🎯 Cursor Control & Graphics Simulation
+
+- **`gotoxy(x, y)`** is used throughout the game to move the console cursor for drawing and erasing game elements.
+- This simulates graphics in a **text-based environment** by updating specific positions of the console screen.
+
+---
+
+### ⚠️ Collision Detection
+
+- Implemented through logical comparisons:
+  - If the bird's Y-position is **outside the pipe gap** when it reaches a pipe → Collision!
+  - If the bird **falls below the screen** → Game Over!
+- All done using simple **if-statements**, making it efficient and lightweight.
+
+---
+
+### 🔄 Modular Design
+
+Each functionality is broken into modular functions, such as:
+- `drawPipe()`, `erasePipe()` → Pipe management 🌵
+- `drawBird()`, `eraseBird()` → Bird animation 🐤
+- `collision()` → Collision checking 💥
+- `updateScore()` → Real-time scoring 📈
+- `gameover()` → Game over screen handler
+
+✅ This modularity makes the code easier to read, debug, and enhance.
+
+---
+
+### 🔐 Control Structures Used
+
+- **Loops:**
+  - `for` loops → Used for drawing borders, pipes, and bird
+  - `while` loop → Game loop for real-time updates
+
+- **Conditionals:**
+  - `if`, `else if`, and nested `if` blocks for handling input, collisions, and pipe logic
+
+---
+
+### 🧮 Randomness
+
+- **`rand()`** is used in `genPipe()` to generate random positions for pipe gaps, adding **variety and unpredictability** to the gameplay.
+
+---
+
+### 🧑‍💻 Windows API Concepts
+
+- **Cursor Visibility & Positioning** → via `SetConsoleCursorPosition` and `SetConsoleCursorInfo`
+- These functions are key to manipulating the console screen like a canvas 🎨
+
+---
+
+> 📝 **In Summary:**  
+This game uses a mix of **arrays**, **modular functions**, **game loop architecture**, **cursor manipulation**, and **Windows console API** to replicate an interactive game using only C++ and text-based graphics.
 
 ## 🔁 Game Flow
 
 1. Start at the **Main Menu**
-2. Press **1** to Play, **2** for Instructions, **3** to Quit
+2. Press **1** to Play,
+    **2** for Instructions,
+    **3** to Quit
 3. Use **Spacebar** to flap and fly
 4. Avoid hitting pipes or floor/ceiling
 5. Game Over screen shows final score
