@@ -78,4 +78,22 @@ int main() {
 
     return 0;
 }
+🧩 Menu Options
+1 ➜ Starts the main game loop (play() function).
+
+2 ➜ Shows the control scheme.
+
+3 ➜ Exits the game.
+
+🕹️ Game Flow: Key Functions
+Function	Description
+gotoxy(x, y)	Moves the cursor to a specific coordinate in console
+setcursor()	Hides the blinking console cursor
+drawBorder()	Draws the top/bottom borders & menu section
+drawBird()	Displays bird at current position
+drawPipe()	Draws pipe obstacles with a random gap
+erasePipe()	Erases previous pipe position to animate movement
+collision()	Checks if bird hits a pipe or ground
+updateScore()	Displays the current score
+gameover()	Shows "Game Over" screen
 
