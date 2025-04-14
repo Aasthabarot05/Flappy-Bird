@@ -141,6 +141,122 @@ The score increments each time the bird successfully passes a pipe. The score is
 3. **Game Loop**: The game continues until the bird collides with a pipe or the ground.
 4. **Game Over**: Once the game ends, the player is prompted to return to the main menu.
 
+## Main Functions of the Game 🚀
+
+The main functions of the game are the core components responsible for executing the game logic. Below is an overview of the key functions and their responsibilities:
+
+### 1. `main()` function 🏁
+**Role:** The entry point of the program. It controls the overall flow of the game.
+
+**Responsibilities:**
+- Initializes the game by setting the cursor visibility and seeding the random number generator.
+- Displays the main menu and waits for user input.
+- Based on the user input, either starts the game, shows instructions, or exits the program.
+- Calls the `play()` function to start the game when the user chooses to play.
+
+---
+
+### 2. `play()` function 🎮
+**Role:** This is the main game loop that controls the gameplay and updates the game state in real-time.
+
+**Responsibilities:**
+- Initializes the bird’s position and score.
+- Generates and draws the pipes.
+- Continuously checks for user input (spacebar to make the bird fly and ESC to exit).
+- Moves the bird and pipes.
+- Checks for collisions between the bird and the pipes or the ground.
+- Updates the score each time the bird successfully passes through a gap.
+- Ends the game if a collision occurs and calls the `gameover()` function.
+
+---
+
+### 3. `gotoxy(int x, int y)` function 🎯
+**Role:** Used to move the cursor to a specific position on the console screen.
+
+**Responsibilities:**
+- Sets the cursor's position using `SetConsoleCursorPosition()` to place text at the correct locations on the screen.
+
+---
+
+### 4. `drawBorder()` function 🖼️
+**Role:** Draws the borders of the game area, including the top, bottom, and side borders, as well as the separator between the game window and the menu area.
+
+**Responsibilities:**
+- Uses `gotoxy()` to place the ASCII characters that create the borders on the screen.
+
+---
+
+### 5. `genPipe(int ind)` function 🏗️
+**Role:** Generates the vertical gap position of a pipe.
+
+**Responsibilities:**
+- Sets a random gap position for the pipe at index `ind` between the values 3 and 16.
+
+---
+
+### 6. `drawPipe(int ind)` function 🚧
+**Role:** Draws a pipe at the specified index `ind`.
+
+**Responsibilities:**
+- Draws the upper and lower parts of the pipe by using the gap position (`gapPos[ind]`), filling in the space with ASCII characters.
+
+---
+
+### 7. `erasePipe(int ind)` function ❌
+**Role:** Erases a pipe at the specified index `ind`.
+
+**Responsibilities:**
+- Clears the space previously occupied by the pipe by overwriting it with empty spaces.
+
+---
+
+### 8. `drawBird()` function 🦅
+**Role:** Draws the bird on the screen at its current position.
+
+**Responsibilities:**
+- Uses ASCII characters from the `bird` array to render the bird in the console at the current vertical position (`birdPos`).
+
+---
+
+### 9. `eraseBird()` function 🕊️
+**Role:** Erases the bird from the screen.
+
+**Responsibilities:**
+- Clears the area where the bird is currently positioned.
+
+---
+
+### 10. `collision()` function ⚡
+**Role:** Detects whether the bird collides with a pipe or the ground.
+
+**Responsibilities:**
+- Checks if the bird's current position intersects with any active pipes or if it hits the ground, returning `1` if there is a collision and `0` otherwise.
+
+---
+
+### 11. `gameover()` function 💥
+**Role:** Displays the "Game Over" screen.
+
+**Responsibilities:**
+- Clears the screen and prints a message indicating that the game is over. The player is prompted to press any key to return to the main menu.
+
+---
+
+### 12. `updateScore()` function 💯
+**Role:** Updates and displays the score in the game.
+
+**Responsibilities:**
+- Prints the current score on the screen at a specific location (in the menu area of the screen).
+
+---
+
+### 13. `instructions()` function 📚
+**Role:** Displays the game instructions.
+
+**Responsibilities:**
+- Clears the screen and displays instructions on how to play the game, such as using the spacebar to make the bird fly.
+
+
 ## Installation
 
 1. Clone this repository or download the source code.
