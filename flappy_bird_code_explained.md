@@ -167,11 +167,12 @@ Each loop iteration performs:
 - 🐤 for the bird  
 - 🌵 for pipes  
 - 🧱 for walls  
-- 📈 for score  
+- 📈 for score
+-  ![Main Menu](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uistartscreen.png)
 
 ### 🧱 2. **Game Area Borders**
 - Now clearly drawn using 🧱 to make the game feel structured
-
+  ![Gameplay](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameboard.png)
 ### 📚 3. **Updated Instructions**
 - Clearer instructions with emojis to enhance readability  
   ![Instructions](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uiinstruction.png)
