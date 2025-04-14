@@ -192,7 +192,13 @@ Each loop iteration performs:
   ![Game Over](https://github.com/Aasthabarot05/Flappy-Bird/blob/main/Screenshots/uigameover.png)
 
 ---
+## 🔮 Future Plans
 
+- Add sound effects for flaps, points, and game over
+- Implement difficulty levels (speed increase)
+- High score saving across sessions
+- Bird skin customization 🎨
+- Multiplayer mode (crazy idea but fun!)
 ## 🛠️ Installation
 
 1. 📥 Clone or download the repository
