@@ -52,10 +52,7 @@ void drawBorder() {
         gotoxy(WIN_WIDTH, i); cout << "🧱";          // Right wall
     }
 
-    // // Divider between game area and score/instructions
-    // for (int i = 0; i < SCREEN_HEIGHT; i++) {
-    //     gotoxy(WIN_WIDTH + 2, i); cout << "🧱";
-    // }
+   
 }
 
 
