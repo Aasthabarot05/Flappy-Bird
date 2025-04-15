@@ -38,17 +38,7 @@ void setcursor(bool visible, DWORD size) {
     SetConsoleCursorInfo(console, &lpCursor);
 }
 
-// void drawBorder() {
-//     for (int i = 0; i < SCREEN_WIDTH; i++) {
-//         gotoxy(i, 0); cout << "🧱";
-//         gotoxy(i, SCREEN_HEIGHT); cout << "🧱";
-//     }
-//     for (int i = 0; i < SCREEN_HEIGHT; i++) {
-//         gotoxy(0, i); cout << "🧱";
-//         gotoxy(SCREEN_WIDTH, i); cout << "🧱";
-//         gotoxy(WIN_WIDTH, i); cout << "🧱";
-//     }
-// }
+
 void drawBorder() {
     // Top and bottom borders
     for (int i = 0; i <= WIN_WIDTH; i += 2) {
